@@ -7,7 +7,7 @@ const Navbar = () => {
       <div className="container">
         <Link to="/" className="brand-logo">
           {/* Use the public URL for the logo */}
-          <img src={process.env.PUBLIC_URL + '/logo.png'} alt="TradeRun Logo" style={{ height: '70px', width: '200px' }} /> {/* Adjust height as needed */}
+          <img src={process.env.PUBLIC_URL + '/static/logo.png'} alt="TradeRun Logo" style={{ height: '70px', width: '200px' }} /> {/* Adjust height as needed */}
         </Link>
         <nav>
           <ul>

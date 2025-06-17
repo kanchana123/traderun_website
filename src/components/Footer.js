@@ -1,12 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 
 const Footer = () => {
-  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
-
-  useEffect(() => {
-    setCurrentYear(new Date().getFullYear());
-  }, []);
+  // Calculate currentYear directly, no need for state or effect if it doesn't change during component lifecycle.
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="site-footer">
@@ -15,13 +11,13 @@ const Footer = () => {
           <ul>
             <li>
               {/* Link to the PDF in the public folder, opening in a new tab */}
-              <a href={process.env.PUBLIC_URL + '/traderun_terms_and_conditions.pdf'} target="_blank" rel="noopener noreferrer">
+              <a href={process.env.PUBLIC_URL + '/static/traderun_terms_and_conditions.pdf'} target="_blank" rel="noopener noreferrer">
                 Terms & Conditions
               </a>
             </li>
             <li>
               {/* Link to the PDF in the public folder, opening in a new tab */}
-              <a href={process.env.PUBLIC_URL + '/traderun_privacy_policy.pdf'} target="_blank" rel="noopener noreferrer">
+              <a href={process.env.PUBLIC_URL + '/static/traderun_privacy_policy.pdf'} target="_blank" rel="noopener noreferrer">
                 Privacy Policy
               </a>
             </li>

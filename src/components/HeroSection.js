@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 
 const HeroSection = () => {
-  const [isMuted, setIsMuted] = useState(false); // Start unmuted
+  const [isMuted, setIsMuted] = useState(true); // Start muted for autoplay
   const videoRef = useRef(null);
 
   const toggleMute = () => {
@@ -24,10 +24,10 @@ const HeroSection = () => {
               <video
                 ref={videoRef}
                 className="gameplay-video"
-                src={process.env.PUBLIC_URL + '/traderun_gameshow.mp4'}
+                src={process.env.PUBLIC_URL + '/static/traderun_gameshow.mp4'}
                 autoPlay
                 loop
-                muted={!isMuted}
+                muted={isMuted} // Directly use the isMuted state
                 playsInline /* Important for iOS Safari */
                 onClick={toggleMute} // Toggle mute on click
               />
