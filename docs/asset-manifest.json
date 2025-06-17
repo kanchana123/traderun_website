@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/traderun_website/static/css/main.69a17e40.css",
+    "main.js": "/traderun_website/static/js/main.983e09c3.js",
+    "index.html": "/traderun_website/index.html",
+    "main.69a17e40.css.map": "/traderun_website/static/css/main.69a17e40.css.map",
+    "main.983e09c3.js.map": "/traderun_website/static/js/main.983e09c3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.69a17e40.css",
+    "static/js/main.983e09c3.js"
+  ]
+}
