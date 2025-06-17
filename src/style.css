@@ -1,0 +1,416 @@
+/* Neon Theme Variables */
+:root {
+    --neon-blue: #00ffff; /* Aqua/Cyan */
+    --neon-purple: #9400d3; /* Dark Violet / Purple */
+    --neon-pink: #ff00ff; /* Magenta / Pinkish Purple */
+    --dark-bg: #0a0a23; /* Very dark blue/purple - almost black */
+    --light-text: #ffffff; /* Changed to white */
+    --glow-text-shadow: 0 0 3px var(--neon-blue), 0 0 5px var(--neon-blue); /* Reduced blue glow */
+    --glow-box-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue), 0 0 15px var(--neon-purple);
+}
+
+/* Basic Reset & Defaults */
+body, h1, h2, h3, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    line-height: 1.6;
+    color: var(--light-text); /* Default light text for dark bg */
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body {
+    background-color: var(--dark-bg); /* Dark background */
+}
+
+main {
+    flex-grow: 1;
+}
+
+a {
+    text-decoration: none;
+    color: var(--neon-blue); /* Neon blue for links */
+}
+
+a:hover {
+    color: var(--neon-pink);
+    text-shadow: 0 0 5px var(--neon-pink);
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Top Navigation Bar */
+.top-nav {
+    background-color: var(--dark-bg); /* Solid dark background */
+    padding: 15px 0;
+    box-shadow: 0 2px 10px var(--neon-purple); /* Neon purple glow */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.top-nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--neon-blue);
+    text-shadow: var(--glow-text-shadow);
+}
+
+.brand-logo:hover {
+    text-decoration: none;
+}
+
+.top-nav nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.top-nav nav ul li {
+    margin-left: 20px;
+}
+
+.top-nav nav ul li a {
+    font-weight: 500;
+    color: var(--light-text);
+}
+
+.top-nav nav ul li a:hover {
+    color: var(--neon-pink);
+    text-decoration: none;
+    text-shadow: 0 0 5px var(--neon-pink);
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: transparent; /* Will inherit body bg or have its own dark variant */
+    padding: 60px 0; /* Adjusted padding */
+    align-items: center; /* Vertically align items in flex container */
+    min-height: 80vh; /* Give it some height */
+}
+
+.hero-container { /* New class for flex layout within hero section */
+    display: flex;
+    align-items: center; /* Vertically align items */
+    justify-content: space-between; /* Distribute space */
+    gap: 40px; /* Space between text and visual */
+}
+
+.hero-text-content {
+    flex: 1; /* Takes up available space */
+    text-align: left; /* Align text to the left */
+    padding-right: 20px; /* Add some padding if text is too close to visual */
+}
+
+.hero-visual-content {
+    flex: 1; /* Takes up available space */
+    display: flex;
+    justify-content: center; /* Center the mockup if it's smaller than the flex item */
+    align-items: center;
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: var(--neon-blue);
+    text-shadow: var(--glow-text-shadow);
+}
+
+.hero-section .subtitle {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    color: var(--light-text);
+    opacity: 0.9;
+}
+
+.gameplay-visual-placeholder {
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+    font-style: italic;
+    margin: 0 auto;
+    padding: 0; /* Removed padding as iphone-mockup will handle it */
+    /* Ensure it doesn't add extra background if mockup is smaller */
+    background-color: transparent; 
+}
+
+.iphone-mockup {
+    position: relative;
+    width: 300px; /* Adjust to your iPhone frame image's aspect ratio */
+    height: 600px; /* Adjust to your iPhone frame image's aspect ratio */
+    /* background-image: url('/iphone_frame.png'); Path to your frame in the public folder */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px var(--neon-purple), 0 0 30px var(--neon-blue); /* Neon glow for the phone */
+    border-radius: 30px; /* Optional: if your frame image doesn't have rounded corners */
+}
+
+.gameplay-video {
+    width: 87%;  /* Adjust to fit inside your specific iPhone frame's screen area */
+    height: 90%; /* Adjust to fit inside your specific iPhone frame's screen area */
+    object-fit: cover;
+    border-radius: 20px; /* Adjust to match the screen curve of your iPhone frame */
+    /* If your frame image has a notch or dynamic island, you might need to add top padding or adjust positioning */
+    /* For example, to push it down slightly:
+    position: absolute;
+    top: 5%;
+    left: 6.5%; */
+}
+
+/* Responsive adjustments for hero section */
+@media (max-width: 992px) { /* Adjust breakpoint as needed */
+    .hero-container {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        text-align: center; /* Center text when stacked */
+    }
+    .hero-text-content {
+        text-align: center; /* Center text when stacked */
+        padding-right: 0;
+        margin-bottom: 40px; /* Add space below text when stacked */
+    }
+    .hero-section h1, .hero-section .subtitle {
+        text-align: center;
+    }
+}
+
+/* Content Sections */
+.content-section {
+    padding: 60px 0;
+    background-color: rgba(10, 10, 35, 0.5); /* Dark, slightly transparent */
+}
+
+.content-section.alt-bg {
+    background-color: rgba(20, 20, 45, 0.5); /* Slightly different dark tone */
+}
+
+.content-section h2 {
+    font-size: 2.2em;
+    margin-bottom: 30px;
+    text-align: center;
+    color: var(--neon-blue);
+    text-shadow: var(--glow-text-shadow);
+}
+
+.content-section ul {
+    list-style-position: inside;
+}
+
+.content-section ul li {
+    margin-bottom: 10px;
+}
+
+/* Features Section Card Styling */
+.features-list {
+    list-style: none; /* Remove default list styling */
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between cards */
+}
+
+.feature-card {
+    background-color: rgba(25, 25, 55, 0.7); /* Dark card background */
+    border: 1px solid var(--neon-blue); /* Neon border */
+    border-radius: 8px; /* Rounded corners for the card */
+    padding: 20px;
+    box-shadow: var(--glow-box-shadow); /* Neon glow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue), 0 0 30px var(--neon-pink); /* Enhanced glow */
+}
+
+.feature-card h3 {
+    font-size: 1.25em;
+    color: var(--neon-pink);
+    margin-bottom: 10px;
+}
+
+/* App Store Badges */
+.app-store-badge {
+    height: 100px; /* Adjust height as needed, width will scale proportionally */
+    margin: 0 10px; /* Add some spacing between badges */
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease; /* Added box-shadow transition */
+    border-radius: 8px; /* Optional: if your badges have rounded corners for a better glow effect */
+    box-shadow: var(--glow-box-shadow); /* Default glowing border */
+}
+
+/* App Buttons */
+.app-buttons {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.app-button {
+    display: inline-block;
+    padding: 15px 30px;
+    margin: 10px; /* Added margin for better spacing on smaller screens */
+    background-color: var(--neon-blue);
+    color: var(--dark-bg);
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: var(--glow-box-shadow);
+}
+
+/* Links for app store images */
+.app-store-link:hover .app-store-badge,
+.google-play-link:hover .app-store-badge {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.app-store-badge:hover {
+    /* Enhanced glow effect on hover */
+    box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue), 0 0 30px var(--neon-pink);
+}
+
+
+/* Footer */
+.site-footer {
+    background-color: var(--dark-bg); /* Consistent dark footer */
+    padding: 40px 0;
+    border-top: 1px solid var(--neon-purple);
+    text-align: center;
+    margin-top: auto; /* Pushes footer to bottom if content is short */
+}
+
+.site-footer nav ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+.site-footer nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.site-footer nav ul li a {
+    color: var(--neon-blue);
+}
+
+.site-footer nav ul li a:hover {
+    color: var(--neon-pink);
+}
+
+.site-footer p {
+    font-size: 0.9em;
+    color: var(--light-text);
+}
+
+/* Guide Page Specifics */
+.page-content { /* This class is on the main element in GuidePage.js */
+    padding-top: 40px;
+    padding-bottom: 60px;
+    background-color: transparent; /* Inherit dark body background */
+}
+
+.page-content > h1 { /* Direct child h1 of .page-content */
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    color: var(--neon-blue);
+    text-shadow: var(--glow-text-shadow);
+}
+
+.guide-section {
+    margin-bottom: 40px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    background-color: rgba(25, 25, 55, 0.7); /* Dark card background */
+    border: 1px solid var(--neon-blue); /* Neon border */
+    box-shadow: var(--glow-box-shadow);
+}
+
+.guide-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    text-align: left;
+    border-bottom: 1px solid var(--neon-purple);
+    padding-bottom: 10px;
+    color: var(--neon-pink);
+}
+
+.guide-section h3 {
+    font-size: 1.4em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: var(--neon-blue);
+}
+
+.guide-section ul, .guide-section article ul {
+    list-style-type: disc;
+    padding-left: 20px; /* Indent list items */
+}
+.guide-section article ul { /* For HUD list */
+    padding-left: 20px;
+}
+
+/* Responsive adjustments (basic example) */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.2em;
+    }
+    .hero-section .subtitle {
+        font-size: 1.1em;
+    }
+    /* .hero-container stacking is handled by the new media query above */
+    /* .hero-text-content text-align is handled by the new media query above */
+
+
+    .top-nav .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .top-nav nav {
+        margin-top: 10px;
+    }
+    .top-nav nav ul {
+        padding-left: 0;
+        justify-content: center;
+    }
+    .top-nav nav ul li {
+        margin: 0 10px;
+    }
+    .content-section h2, .page-content > h1 {
+        font-size: 1.8em;
+    }
+    .guide-section h2 {
+        font-size: 1.5em;
+    }
+    .guide-section h3 {
+        font-size: 1.2em;
+    }
+    .app-button {
+        padding: 12px 24px;
+        font-size: 0.9em;
+    }
+}
