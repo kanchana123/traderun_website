@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/traderun_website/static/css/main.cdfdd4e3.css",
-    "main.js": "/traderun_website/static/js/main.bcb9a968.js",
-    "static/js/453.d1e910b4.chunk.js": "/traderun_website/static/js/453.d1e910b4.chunk.js",
-    "index.html": "/traderun_website/index.html",
-    "main.cdfdd4e3.css.map": "/traderun_website/static/css/main.cdfdd4e3.css.map",
-    "main.bcb9a968.js.map": "/traderun_website/static/js/main.bcb9a968.js.map",
-    "453.d1e910b4.chunk.js.map": "/traderun_website/static/js/453.d1e910b4.chunk.js.map"
+    "main.css": "./static/css/main.6f08b557.css",
+    "main.js": "./static/js/main.1bb09a23.js",
+    "static/js/453.d1e910b4.chunk.js": "./static/js/453.d1e910b4.chunk.js",
+    "index.html": "./index.html",
+    "main.6f08b557.css.map": "./static/css/main.6f08b557.css.map",
+    "main.1bb09a23.js.map": "./static/js/main.1bb09a23.js.map",
+    "453.d1e910b4.chunk.js.map": "./static/js/453.d1e910b4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cdfdd4e3.css",
-    "static/js/main.bcb9a968.js"
+    "static/css/main.6f08b557.css",
+    "static/js/main.1bb09a23.js"
   ]
 }

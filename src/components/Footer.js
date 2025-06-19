@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   // Calculate currentYear directly, no need for state or effect if it doesn't change during component lifecycle.
@@ -20,6 +21,9 @@ const Footer = () => {
               <a href={process.env.PUBLIC_URL + '/static/traderun_privacy_policy.pdf'} target="_blank" rel="noopener noreferrer">
                 Privacy Policy
               </a>
+            </li>
+            <li>
+              <Link to="/support">Support</Link>
             </li>
           </ul>
         </nav>
