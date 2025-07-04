@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import GuidePage from './pages/GuidePage';
 import SupportPage from './components/SupportPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import './style.css';
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/guide" element={<GuidePage />} />
           <Route path="/support" element={<SupportPage />} />
-
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         </Routes>
         <Footer />
       </div>

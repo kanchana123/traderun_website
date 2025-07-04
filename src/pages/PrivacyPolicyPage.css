@@ -1,0 +1,44 @@
+.privacy-container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.privacy-container h1, .privacy-container h2, .privacy-container h3 {
+    color: #222;
+}
+
+/* Ensure all text within the container is readable against the white background */
+.privacy-container, .privacy-container p, .privacy-container li {
+    color: #333;
+}
+
+.privacy-container h1 {
+    text-align: center;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.privacy-container a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.privacy-container a:hover {
+    text-decoration: underline;
+}
+
+.privacy-container .last-updated {
+    text-align: center;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.privacy-container ul {
+    padding-left: 20px;
+}
