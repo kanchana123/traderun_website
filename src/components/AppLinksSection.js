@@ -7,7 +7,7 @@ const AppLinksSection = () => {
         <h2>Get The Game</h2>
         <p>Ready to test your trading instincts? Download TradeRun now and start your journey to become a virtual market whiz!</p>
         <div className="app-buttons">
-          <a href="#" className="app-store-link"> {/* Replace # with actual App Store link */}
+          <a href="https://apps.apple.com/in/app/traderun-stock-simulation/id6747412029" className="app-store-link"> {/* Replace # with actual App Store link */}
             <img 
               src={process.env.PUBLIC_URL + '/static/app_store2.png'} 
               alt="Download on the App Store" 

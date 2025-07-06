@@ -17,10 +17,7 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              {/* Link to the PDF in the public folder, opening in a new tab */}
-              <a href={process.env.PUBLIC_URL + '/static/traderun_privacy_policy.pdf'} target="_blank" rel="noopener noreferrer">
-                Privacy Policy
-              </a>
+              <Link to="/privacy-policy">Privacy Policy</Link>
             </li>
             <li>
               <Link to="/support">Support</Link>

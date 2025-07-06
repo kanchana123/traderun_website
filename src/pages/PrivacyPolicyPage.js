@@ -6,7 +6,7 @@ const PrivacyPolicyPage = () => {
     <div className="privacy-container">
         <br />
         <h1>Privacy Policy for TradeRun</h1>
-        <p className="last-updated">Last Updated: 17th June, 2025</p>
+        <p className="last-updated">Last Updated: July 6, 2025</p>
         <br />
         <p>
             Welcome to TradeRun! This Privacy Policy describes how TradeRun collects, uses, and
@@ -26,7 +26,7 @@ const PrivacyPolicyPage = () => {
         <br />
         <h3>A. Information You Provide Directly:</h3>
         <ul>
-            <li><strong>Onboarding Information:</strong> When you first start the Game, we may ask you to provide information such as your name or nickname, age, and self-assessed trading experience level. This information is used to personalize your game experience and for internal analytics.</li>
+            <li><strong>Onboarding Information:</strong> When you first start the Game, we may ask you to provide information such as your name or nickname, age, and self-assessed trading experience level. To maintain a safe and respectful environment, any username you provide is processed through an automated profanity filter to prevent the use of objectionable language. This information is used to personalize your game experience and for internal analytics.</li>
             <li><strong>Settings and Preferences:</strong> Information you provide when adjusting game settings, such as lot size preferences.</li>
             <li><strong>Communications:</strong> If you contact us directly (e.g., for customer support), we may receive additional information about you, such as your name, email address, the contents of your message, and any other information you choose to provide.</li>
         </ul>
@@ -88,10 +88,9 @@ const PrivacyPolicyPage = () => {
         <p>Depending on your location and applicable law, you may have certain rights regarding your personal information:</p>
         <ul>
             <li><strong>Access and Correction:</strong> You may have the right to access and update certain personal information we hold about you (e.g., through in-game settings if available, or by contacting us).</li>
-            <li><strong>Data Deletion:</strong> You may request the deletion of your personal information. We will comply with such requests where required by law. Note that deleting your data may result in the loss of your game progress and account. You can also clear local PlayerPrefs data by uninstalling the Game or clearing app data through your device settings.</li>
+            <li><strong>Data Deletion:</strong> You have the right to request the deletion of your account and associated data. You can initiate this process easily from within the Game by navigating to the Settings menu and using the "Delete Account" button. This will open your device's email client with a pre-filled request, including your anonymous user ID, to help us identify and delete your data from our servers (Firebase). We will comply with such requests where required by law. Please note that deleting your data is permanent and will result in the loss of all your game progress and account information.</li>
             <li><strong>Opt-Out of Targeted Advertising:</strong> You can usually opt out of interest-based advertising on mobile applications by checking the settings of your device (e.g., "Limit Ad Tracking" on iOS or "Opt out of Ads Personalization" on Android) and/ or through the settings of our advertising partners.</li>
             <li><strong>Managing Notifications:</strong> You can manage local reminder notifications through your device's system settings or in-game settings (if available).</li>
-            <li><strong>Firebase Data:</strong> If you wish to request deletion of data stored on Firebase associated with your anonymous user ID, please contact us. We will make reasonable efforts to comply with your request, subject to technical feasibility and legal requirements.</li>
         </ul>
 
         <br />
@@ -104,32 +103,37 @@ const PrivacyPolicyPage = () => {
 
         <br />
         <h2>7. Children's Privacy</h2>
-        <p>Our Services are designed to be appropriate for a general audience, including children. We are committed to protecting the privacy of children who use our Services. This section explains our practices with respect to information collected from children under the age of 13 (or the applicable age of digital consent in your jurisdiction, e.g., 16 in some EU countries), ("Child" or "Children").</p>
+        <p>Our Services are designed for a general audience. We are committed to protecting the privacy of children who use our Services and comply with the Children's Online Privacy Protection Act (COPPA) and other applicable laws. This section explains our practices with respect to information collected from users identified as being under the age of 13 ("Child" or "Children").</p>
         
         <br />
-        <h3>A. Age Gate and Data Collection:</h3>
+        <h3>A. Age Gate and Data Handling:</h3>
         <ul>
-            <li>During our onboarding process, we ask users for their age.</li>
-            <li>For users identified as Children: We limit the collection of personal information. The personal information we may collect from Children is strictly for the support of internal operations of the Game, such as:
+            <li><strong>Neutral Age Screen:</strong> We present a neutral age screen to all users upon first launch to determine their age.</li>
+            <li><strong>Limited Data Collection for Children:</strong> For users identified as Children, we take specific measures to protect their privacy:
                 <ul>
-                    <li>A persistent identifier (like a device ID or an internal user ID generated by Firebase Anonymous Auth) to save game progress, manage local high scores, and for analytics to improve game performance.</li>
-                    <li>Country or region (derived from IP address, but the IP address itself is not persistently stored in a way that identifies the child).</li>
-                    <li>Gameplay information (virtual portfolio value, game progress, scores) associated with the persistent identifier.</li>
+                    <li><strong>Username Handling:</strong> If a Child provides a username, it is stored <strong>only locally on their device</strong> and is not transmitted to our servers. As with all users, this username is subject to our automated profanity filter. For online features like leaderboards, we generate a <strong>random, anonymous username</strong> (e.g., "Paris482") that is not tied to any personal information.</li>
+                    <li><strong>Data for Internal Operations:</strong> The only information we collect from Children is what is strictly necessary for the internal operations of the Game. This includes a persistent identifier for saving game progress (via Firebase Anonymous Auth) and gameplay data (scores, level, virtual portfolio value) associated with that identifier.</li>
+                    <li><strong>Analytics:</strong> We <strong>disable</strong> Google Analytics for Firebase data collection and reporting for all users identified as Children.</li>
                 </ul>
             </li>
-            <li>We DO NOT collect more personal information from Children than is reasonably necessary to participate in the Game.</li>
-            <li>We DO NOT use this information for behavioral advertising or to create profiles of Children for any other purpose than supporting the internal operations of our Game.</li>
+            <li>We DO NOT knowingly collect personal information from Children beyond what is needed for internal operations.</li>
+            <li>We DO NOT use information collected from Children for behavioral advertising or to create user profiles.</li>
         </ul>
 
         <br />
-        <h3>B. Parental Consent:</h3>
-        <p>For features that might involve collecting, using, or disclosing personal information beyond what is permissible for supporting internal operations (e.g., if we were to add features like chat or personalized accounts that store more identifiable information), we would implement a method to obtain verifiable parental consent before collecting such information from Children. Currently, TradeRun does not include such features that would require this level of consent for Children, as we limit data collection as described above.</p>
-        <br />
-        <h3>C. Third-Party Services and Children:</h3>
+        <h3>B. Third-Party Services and Children:</h3>
         <ul>
-            <li><strong>Firebase (Analytics, Firestore, Auth):</strong> We use Firebase services. For users identified as Children, data sent to Firebase is configured to support internal operations only. We rely on Google's commitments regarding their services' compliance with COPPA and GDPR-K.</li>
-            <li><strong>Advertising:</strong> If advertisements are shown to Children, they will be contextually targeted (based on the game content) rather than behaviorally targeted (based on user activity across apps/sites). We will use ad networks that offer options for serving non-personalized ads or ads appropriate for child-directed services. Google AdMob is configured to serve non-personalized ads to users identified as children.</li>
+            <li><strong>Firebase (Firestore & Auth):</strong> We use Firebase for core game functionality like saving progress and leaderboards. For Children, all data stored is anonymized and used only to support the game's internal operations, in line with Google's data protection terms.</li>
+            <li><strong>Google AdMob (Advertising):</strong> For users identified as Children, we programmatically configure Google AdMob to:
+                <ul>
+                    <li>Tag all ad requests for <strong>"Child-Directed Treatment"</strong>.</li>
+                    <li>This disables interest-based and remarketing ads. Only contextual ads (based on the content of the game) may be shown.</li>
+                </ul>
+            </li>
         </ul>
+        <br />
+        <h3>C. Parental Gate for External Links</h3>
+        <p>To ensure a safe environment for all our younger players, any links within the Game that lead to an external website or application (such as our support or privacy policy pages) are protected by a neutral parental gate for all users under the age of 18. This gate requires an adult to solve a simple math problem before the link can be accessed, helping to ensure that a parent or guardian is supervising the action of leaving the app.</p>
         <br />
         <h3>D. Parental Rights:</h3>
         <p>Parents and legal guardians of Children have the right to:</p>
@@ -138,7 +142,7 @@ const PrivacyPolicyPage = () => {
             <li>Request that we delete the personal information collected from their Child.</li>
             <li>Refuse further collection or use of their Child's personal information.</li>
         </ul>
-        <p>To exercise these rights, please contact us at kanchan.nannavare@gmail.com. We will require you to verify your identity before processing such requests.</p>
+        <p>To exercise these rights, please contact us at kanchan.nannavare@gmail.com. We will require you to verify your identity before processing such requests to protect your Child's privacy.</p>
         <br />
         <h2>8. International Data Transfers</h2>
         <p>Your information may be transferred to, and maintained on, computers located outside of your state, province, country, or other governmental jurisdiction where the data protection laws may differ from those in your jurisdiction. If you are located outside the United States and choose to provide information to us, please note that we transfer data, including personal information, to the United States (where Firebase servers are primarily located) and process it there. Your consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer.</p>
